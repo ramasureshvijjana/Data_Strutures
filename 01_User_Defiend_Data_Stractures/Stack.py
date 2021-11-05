@@ -16,16 +16,25 @@
 # Define  a Stack class
 class Stack:
 
-    def __init__(self):
+    def __init__(self, stack_len = 0):
         self.stack = []
+        self.stack_len = stack_len
 
     # Add element at end
     def push(self, val):
-        self.stack.append(val)
+        # If the length is predefind, add element restricted to defind length [self.length < self.stack_len]
+        # If the length is not defind, Then lenhth of stack is unlimited [self.stack_len == 0]
+        if self.length() < self.stack_len or self.stack_len == 0:
+            self.stack.append(val)
+        else:
+            print('ERROR: Stack out of range.')
 
     # Remove element at end
     def pop(self):
-        self.stack.pop(len(self.stack)-1)
+        if self.stack:
+            self.stack.pop(len(self.stack)-1)
+        else:
+            print('ERROR: Stack is empty. Item can\'t be remove')
 
     # Find last element
     def peak(self):
@@ -33,10 +42,15 @@ class Stack:
 
     # Check is empty or not
     def is_empty(self):
-        if len(self.stack) == 0:
+        if not self.stack:
             return True
         else:
             return False
+
+    # For clear stack
+    def clear(self):
+        return self.stack.clear()
+
     # Return length of stack
     def length(self):
         return len(self.stack)
@@ -58,6 +72,7 @@ class Stack:
 #####################################################################
             
 # Creating Stack obj
+# If we not pass length of stack, by default it take 0 [stack_len = 0 ]
 stk = Stack()
 
 # Add values
@@ -86,3 +101,20 @@ stk.pop()
 # again find sum now with all numaric values of stack
 print(stk.stack)
 print(stk.sum())
+
+# Check is stack empty or not
+print(stk.is_empty())
+# elete stack
+print(stk.clear())
+print(stk.is_empty())
+
+#######################################################################
+
+# Create predefind stack
+stk2 = Stack(3)
+stk2.push(4)
+stk2.push(5)
+stk2.push(6)
+
+print('Stack 2:',stk2.stack)
+stk2.push(7)

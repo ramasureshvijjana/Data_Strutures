@@ -11,6 +11,5 @@
 ## Topics
 
 1. User Defiend Data Stractures     ----->     DSA01_User_Defiend_Data_Stractures  
-    1. Stack  
-        https://github.com/ramasureshvijjana/Data_Strutures/blob/master/DSA01_User_Defiend_Data_Stractures/DSA01_stack/Stack.py
+    [1. Stack](https://github.com/ramasureshvijjana/Data_Strutures/blob/master/DSA01_User_Defiend_Data_Stractures/DSA01_stack/Stack.py)
     2. Queue ----> DSA02_Queue
